@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3rdShift — Get anything done. Instantly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #ffffff; --s1: #f7f7f9; --s2: #eeeff2; --s3: #e5e6ea;
+  --border: rgba(0,0,0,0.07); --border2: rgba(0,0,0,0.11);
+  --accent: #2563eb; --adim: rgba(37,99,235,0.06); --ab: rgba(37,99,235,0.18);
+  --accent-bg: #2563eb; --accent-light: #eef4ff;
+  --t1: #111113; --t2: rgba(17,17,19,0.72); --t3: rgba(17,17,19,0.55);
+  --font: 'Inter', sans-serif; --mono: 'Inter', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --max-w: 1080px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--t1); font-family: var(--font); font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.25rem; height: 60px;
+  background: rgba(255,255,255,0.92); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.logo { text-decoration: none; display: flex; align-items: center; gap: 2px; font-weight: 700; font-size: 1.3rem; color: var(--t1); }
+.logo .a { font-weight: 800; color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 0; }
+.nav-links a { color: var(--t2); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 0 0.75rem; height: 60px; display: flex; align-items: center; transition: color 0.15s; }
+.nav-links a:hover { color: var(--t1); }
+.nav-links a.active { color: var(--t1); font-weight: 600; }
+.nav-btn { height: 38px; padding: 0 1.2rem; background: var(--accent-bg); color: #fff; font-family: var(--font); font-weight: 600; font-size: 0.875rem; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.15s; text-decoration: none; display: flex; align-items: center; }
+.nav-btn:hover { opacity: 0.85; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+
+/* HERO */
+.hero { padding: 140px 1.25rem 72px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.06) 0%, transparent 60%); pointer-events: none; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--adim); border: 1px solid var(--ab); border-radius: 100px; padding: 5px 14px; margin-bottom: 24px; font-size: 0.72rem; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--mono); }
+.hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bg); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.2} }
+.hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; color: var(--t1); margin-bottom: 16px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--t2); max-width: 600px; margin: 0 auto 32px; line-height: 1.65; font-weight: 400; }
+.hero-form { display: flex; align-items: center; gap: 8px; max-width: 400px; margin: 0 auto 10px; background: var(--s1); border: 1px solid var(--border2); border-radius: 12px; padding: 6px 6px 6px 16px; box-shadow: var(--shadow-sm); }
+.hero-form input { flex: 1; background: none; border: none; outline: none; color: var(--t1); font-family: var(--font); font-size: 0.95rem; padding: 8px 0; min-width: 0; }
+.hero-form input::placeholder { color: var(--t3); }
+.hero-form button { height: 40px; padding: 0 20px; background: var(--accent-bg); color: #fff; font-family: var(--font); font-weight: 600; font-size: 0.9rem; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.hero-form button:hover { opacity: 0.85; }
+.hero-note { font-size: 0.8rem; color: var(--t3); }
+
+/* SAVINGS PROOF */
+.savings-proof { max-width: 640px; margin: 0 auto; padding: 48px 1.25rem; text-align: center; }
+.sp-inner { display: flex; align-items: center; gap: 12px; justify-content: center; }
+.sp-card { flex: 1; max-width: 260px; padding: 28px 20px; border-radius: 14px; text-align: center; }
+.sp-old { background: var(--s1); border: none; box-shadow: var(--shadow-card); }
+.sp-new { background: var(--accent-light); border: 2px solid var(--accent); }
+.sp-label { font-family: var(--mono); font-size: 0.75rem; color: var(--t2); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; font-weight: 500; }
+.sp-new .sp-label { color: var(--accent); }
+.sp-price { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; color: var(--t1); }
+.sp-price span { font-size: 1rem; font-weight: 400; color: var(--t2); }
+.sp-new .sp-price { color: var(--accent-bg); }
+.sp-new .sp-price span { color: var(--accent); opacity: 0.7; }
+.sp-for { font-size: 0.88rem; color: var(--t2); margin-top: 8px; }
+.sp-vs { font-size: 1.6rem; color: var(--t3); font-weight: 300; flex-shrink: 0; }
+.sp-note { font-size: 0.85rem; color: var(--t3); margin-top: 20px; }
+
+/* THREE PILLARS */
+.pillars { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
+.pillar { padding: 2.5rem 1.5rem; text-align: center; background: var(--s1); }
+.pillar-word { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; color: var(--t1); letter-spacing: -0.02em; display: block; margin-bottom: 8px; }
+.pillar-word.acc { color: var(--accent); }
+.pillar-desc { font-size: 0.95rem; color: var(--t2); line-height: 1.55; font-weight: 400; }
+
+/* TRUST BAND */
+.trust-band { background: var(--s1); padding: 52px 1.25rem; border-top: none; border-bottom: none; }
+.trust-inner { max-width: 640px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center; gap: 16px; }
+.trust-item { flex: 1; }
+.trust-num { font-size: 2.2rem; font-weight: 800; color: var(--accent-bg); letter-spacing: -0.01em; line-height: 1.2; }
+.trust-num small { font-size: 0.6em; font-weight: 500; opacity: 0.7; }
+.trust-label { font-size: 0.8rem; color: var(--t2); margin-top: 2px; }
+
+/* HOW IT WORKS */
+.how { border-top: none; padding: 96px 1.25rem; background: var(--s1); }
+.how-inner { max-width: 800px; margin: 0 auto; }
+.sec-head { padding: 0 0 32px; }
+.sec-lbl { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+.sec-title { font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; }
+.sec-title em { font-style: normal; color: var(--t2); font-weight: 400; }
+.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.how-step { background: #fff; padding: 32px 28px; border-radius: 14px; border: none; box-shadow: var(--shadow-card); }
+.sn { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 600; }
+.st { font-size: 1.05rem; font-weight: 600; color: var(--t1); letter-spacing: -0.02em; margin-bottom: 8px; }
+.sd { font-size: 0.92rem; color: var(--t2); line-height: 1.65; font-weight: 400; }
+
+/* WORKERS PREVIEW */
+.workers { max-width: var(--max-w); margin: 0 auto; padding: 72px 1.25rem 80px; border-top: none; }
+.w-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.w-card { background: #fff; padding: 24px; border-radius: 14px; border: none; box-shadow: var(--shadow-card); transition: box-shadow 0.15s, transform 0.15s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+.w-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.w-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 1.2rem; }
+.w-cat { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: block; }
+.wc-s { color: #16a34a; } .wc-co { color: #7c3aed; } .wc-v { color: #e11d48; }
+.w-name { font-size: 1.05rem; font-weight: 600; color: var(--t1); letter-spacing: -0.02em; margin-bottom: 6px; }
+.w-desc { font-size: 0.88rem; color: var(--t2); line-height: 1.55; margin-bottom: 12px; font-weight: 400; }
+.w-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.w-tag { font-size: 0.72rem; padding: 4px 10px; background: var(--s1); border: none; border-radius: 6px; color: var(--t2); }
+.pop-tag { font-family: var(--mono); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); background: var(--adim); border: 1px solid var(--ab); padding: 3px 8px; border-radius: 5px; }
+.see-all { font-size: 0.88rem; color: var(--t3); margin-top: 14px; }
+.see-all a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+/* PRICING PREVIEW */
+.pricing-preview { max-width: 800px; margin: 0 auto; padding: 64px 1.25rem; }
+.pp-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 24px; }
+.pp-card { background: #fff; padding: 28px; border-radius: 16px; border: none; box-shadow: var(--shadow-card); text-align: center; position: relative; }
+.pp-pop { border: 2px solid var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,0.10); }
+.pp-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent-bg); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border-radius: 6px; white-space: nowrap; }
+.pp-name { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--t2); margin-bottom: 8px; font-family: var(--mono); }
+.pp-price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; color: var(--t1); line-height: 1; }
+.pp-price span { font-size: 0.9rem; font-weight: 400; color: var(--t3); }
+.pp-items { list-style: none; text-align: left; margin-top: 16px; }
+.pp-items li { font-size: 0.88rem; color: var(--t2); padding: 3px 0; display: flex; align-items: center; gap: 8px; }
+.pp-items li .pi { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-bg); flex-shrink: 0; }
+.pp-cta { display: block; width: 100%; padding: 10px; border-radius: 8px; border: none; cursor: pointer; font-family: var(--font); font-weight: 600; font-size: 0.88rem; margin-top: 16px; transition: opacity 0.15s; text-decoration: none; text-align: center; }
+.pc-ghost { background: var(--s1); color: var(--t1); border: 1px solid var(--border2); }
+.pc-solid { background: var(--accent-bg); color: #fff; }
+.pp-link { font-size: 0.88rem; color: var(--t3); margin-top: 14px; text-align: center; }
+.pp-link a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+/* CTA BAND */
+.cta-band { border-top: none; padding: 96px 1.25rem; text-align: center; background: var(--s1); }
+.cta-band h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 14px; }
+.cta-band h2 em { font-style: normal; color: var(--accent); }
+.cta-form { display: flex; align-items: center; gap: 8px; max-width: 400px; margin: 0 auto; background: #fff; border: 1px solid var(--border2); border-radius: 12px; padding: 6px 6px 6px 16px; box-shadow: var(--shadow-sm); }
+.cta-form input { flex: 1; background: none; border: none; outline: none; color: var(--t1); font-family: var(--font); font-size: 0.95rem; padding: 8px 0; min-width: 0; }
+.cta-form input::placeholder { color: var(--t3); }
+.cta-form button { height: 40px; padding: 0 20px; background: var(--accent-bg); color: #fff; font-family: var(--font); font-weight: 600; font-size: 0.9rem; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.cta-form button:hover { opacity: 0.85; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 24px 1.25rem; display: flex; align-items: center; justify-content: space-between; background: var(--bg); }
+footer p { font-size: 0.82rem; color: var(--t3); }
+.logo-footer { text-decoration: none; display: flex; align-items: center; gap: 2px; font-weight: 700; font-size: 1.1rem; color: var(--t1); opacity: 0.5; }
+.logo-footer .a { font-weight: 800; color: var(--accent); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-btn { display: none; }
+  .hamburger { display: block; }
+  nav { padding: 0 1rem; height: 56px; }
+  .hero { padding: 110px 1rem 48px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-sub { font-size: 1rem; margin-bottom: 24px; }
+  .hero-form { max-width: 100%; }
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { border-bottom: 1px solid var(--border); }
+  .pillar:last-child { border-bottom: none; }
+  .savings-proof { padding: 32px 1rem; }
+  .sp-inner { flex-direction: column; gap: 8px; }
+  .sp-card { max-width: 100%; width: 100%; }
+  .sp-vs { transform: rotate(90deg); font-size: 1.2rem; }
+  .trust-band { padding: 28px 1rem; }
+  .trust-inner { flex-wrap: wrap; gap: 12px; }
+  .trust-item { flex: 0 0 calc(50% - 6px); }
+  .trust-num { font-size: 1.5rem; }
+  .how { padding: 48px 1rem; }
+  .how-steps { grid-template-columns: 1fr; }
+  .workers { padding: 48px 1rem; }
+  .w-grid { grid-template-columns: 1fr; }
+  .pricing-preview { padding: 48px 1rem; }
+  .pp-cards { grid-template-columns: 1fr; }
+  .cta-band { padding: 48px 1rem; }
+  .cta-form { max-width: 100%; }
+  footer { flex-wrap: wrap; gap: 8px; }
+}
+@media (max-width: 400px) {
+  .hero h1 { font-size: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><span class="a">3rd</span>Shift</a>
+  <div class="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="/workers">Workers</a>
+    <a href="/pricing">Pricing</a>
+  </div>
+  <a href="/login" class="nav-btn">Get started</a>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span> Early access open</div>
+  <h1>Get anything done.<br><em>Instantly.</em></h1>
+  <p class="hero-sub">AI-powered workers for content, research, leads, admin, and more — 24/7. No interviews. No managing. No waiting.</p>
+  <div class="hero-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Get early access</button>
+  </div>
+  <p class="hero-note">No credit card required. Cancel anytime.</p>
+</section>
+
+<!-- SAVINGS PROOF -->
+<section class="savings-proof">
+  <div class="sp-inner">
+    <div class="sp-card sp-old">
+      <div class="sp-label">What you're paying now</div>
+      <div class="sp-price">$2,000<span>/mo</span></div>
+      <div class="sp-for">Freelancer or virtual assistant</div>
+    </div>
+    <div class="sp-vs">→</div>
+    <div class="sp-card sp-new">
+      <div class="sp-label">With 3rdShift</div>
+      <div class="sp-price">$29<span>/mo</span></div>
+      <div class="sp-for">Same work. Done faster.</div>
+    </div>
+  </div>
+  <p class="sp-note">Most customers save $1,000–$4,000/month vs. hiring humans.</p>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillar">
+    <span class="pillar-word acc">Faster.</span>
+    <p class="pillar-desc">Get results in seconds, not days. No back-and-forth, no revisions, no waiting.</p>
+  </div>
+  <div class="pillar">
+    <span class="pillar-word">Cheaper.</span>
+    <p class="pillar-desc">One subscription replaces thousands in freelancer fees every month.</p>
+  </div>
+  <div class="pillar">
+    <span class="pillar-word">Better.</span>
+    <p class="pillar-desc">AI that specializes. Focused on one job, done right, every time.</p>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<section class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-num">54</div>
+      <div class="trust-label">AI Workers</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">0</div>
+      <div class="trust-label">Hours interviewing</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">24/7</div>
+      <div class="trust-label">Always running</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">60<small>sec</small></div>
+      <div class="trust-label">To start</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how-inner">
+    <div class="sec-head">
+      <div class="sec-lbl">How it works</div>
+      <div class="sec-title">Three steps to get anything done.</div>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="sn">01</div>
+        <div class="st">Pick a worker</div>
+        <div class="sd">Browse 78 specialized AI workers. Each one is built for a specific job — leads, content, research, admin.</div>
+      </div>
+      <div class="how-step">
+        <div class="sn">02</div>
+        <div class="st">Describe the task</div>
+        <div class="sd">Tell the worker what you need in plain language. Add context, upload files, set your preferences.</div>
+      </div>
+      <div class="how-step">
+        <div class="sn">03</div>
+        <div class="st">Get results</div>
+        <div class="sd">Your worker delivers — content in your inbox, leads in your spreadsheet, research in your doc. 24/7.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKERS PREVIEW -->
+<section class="workers">
+  <div class="sec-head">
+    <div class="sec-title">Meet your new team.</div>
+  </div>
+  <div class="w-grid">
+    <a href="/workers" class="w-card">
+      <div class="w-icon" style="background:rgba(74,222,128,0.12)">💰</div>
+      <span class="w-cat wc-s">Sales & Leads</span>
+      <div class="w-name">Lead Generator</div>
+      <div class="w-desc">Finds, qualifies, and delivers leads to your spreadsheet overnight. Tell it your ICP and wake up to a list.</div>
+      <div class="w-tags">
+        <span class="w-tag">leads</span>
+        <span class="w-tag">prospecting</span>
+        <span class="w-tag">B2B</span>
+      </div>
+      <div style="margin-top:10px;"><span class="pop-tag">Popular</span></div>
+    </a>
+    <a href="/workers" class="w-card">
+      <div class="w-icon" style="background:rgba(167,139,250,0.12)">✍️</div>
+      <span class="w-cat wc-co">Content & Writing</span>
+      <div class="w-name">Content Writer</div>
+      <div class="w-desc">Writes blogs, emails, and social content on your schedule. Give it a topic and tone — get publish-ready copy back.</div>
+      <div class="w-tags">
+        <span class="w-tag">blogs</span>
+        <span class="w-tag">emails</span>
+        <span class="w-tag">social</span>
+      </div>
+    </a>
+    <a href="/workers" class="w-card">
+      <div class="w-icon" style="background:rgba(251,113,133,0.12)">🎬</div>
+      <span class="w-cat wc-v">Video & Short-Form</span>
+      <div class="w-name">Hook & Script Writer</div>
+      <div class="w-desc">Scroll-stopping hooks, YouTube scripts, and short-form video scripts for Reels, Shorts, and TikTok.</div>
+      <div class="w-tags">
+        <span class="w-tag">hooks</span>
+        <span class="w-tag">scripts</span>
+        <span class="w-tag">TikTok</span>
+      </div>
+    </a>
+  </div>
+  <div class="see-all"><a href="/workers">See all 78 workers →</a></div>
+</section>
+
+<!-- PRICING PREVIEW -->
+<section class="pricing-preview">
+  <div class="sec-head" style="text-align:center;">
+    <div class="sec-title">Simple pricing. <em>Serious results.</em></div>
+    <p style="font-size:0.88rem;color:var(--t3);margin-top:4px;">Cancel anytime.</p>
+  </div>
+  <div class="pp-cards">
+    <div class="pp-card">
+      <div class="pp-name">Starter</div>
+      <div class="pp-price">$29<span>/mo</span></div>
+      <ul class="pp-items">
+        <li><span class="pi"></span> Unlimited light tasks</li>
+        <li><span class="pi"></span> 5 worker slots</li>
+        <li><span class="pi"></span> Email support</li>
+      </ul>
+      <a href="/login" class="pp-cta pc-ghost">Get started</a>
+    </div>
+    <div class="pp-card pp-pop">
+      <div class="pp-badge">Most popular</div>
+      <div class="pp-name">Pro</div>
+      <div class="pp-price">$79<span>/mo</span></div>
+      <ul class="pp-items">
+        <li><span class="pi"></span> 25 heavy task credits</li>
+        <li><span class="pi"></span> All 78 workers</li>
+        <li><span class="pi"></span> Priority support</li>
+      </ul>
+      <a href="/login" class="pp-cta pc-solid">Get started</a>
+    </div>
+    <div class="pp-card">
+      <div class="pp-name">Operator</div>
+      <div class="pp-price">$199<span>/mo</span></div>
+      <ul class="pp-items">
+        <li><span class="pi"></span> 100 heavy task credits</li>
+        <li><span class="pi"></span> API access</li>
+        <li><span class="pi"></span> Dedicated support</li>
+      </ul>
+      <a href="/login" class="pp-cta pc-ghost">Get started</a>
+    </div>
+  </div>
+  <div class="pp-link"><a href="/pricing">See full pricing →</a></div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-band">
+  <h2>Stop paying thousands.<br>Start at <em>$29.</em></h2>
+  <div class="cta-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Get started</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo-footer"><span class="a">3rd</span>Shift</a>
+  <p>© 2026 3rdShift. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+title = "3rdShift secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "supabase-access-token"
+description = "Supabase access token"
+regex = '''\bsbp_[A-Za-z0-9_\-]{20,}\b'''
+tags = ["key", "supabase"]
+
+[[rules]]
+id = "secret-key-sk-prefix"
+description = "Secret key with sk_ or sk- prefix (Stripe/OpenAI-style)"
+regex = '''\b(?:sk_live|sk_test|sk|sk-proj)[_-][A-Za-z0-9_\-]{20,}\b'''
+tags = ["key", "stripe", "openai"]
+
+[[rules]]
+id = "stripe-webhook-secret"
+description = "Stripe webhook signing secret"
+regex = '''\bwhsec_[A-Za-z0-9]{20,}\b'''
+tags = ["key", "stripe", "webhook"]
+
+[[rules]]
+id = "github-classic-pat"
+description = "GitHub classic personal access token"
+regex = '''\bghp_[A-Za-z0-9_]{36,255}\b'''
+tags = ["key", "github"]
+
+[[rules]]
+id = "github-fine-grained-pat"
+description = "GitHub fine-grained personal access token"
+regex = '''\bgithub_pat_[A-Za-z0-9_]{82,255}\b'''
+tags = ["key", "github"]
+
+[[rules]]
+id = "supabase-service-role-jwt"
+description = "Supabase service role JWT"
+regex = '''eyJ[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}'''
+keywords = ["eyJ"]
+tags = ["jwt", "supabase", "service-role"]
+
+[[rules]]
+id = "generic-high-entropy-secret"
+description = "Generic high-entropy credential-like literal assignment"
+regex = '''(?i)(?:secret|token|api[_-]?key|private[_-]?key|password|passwd|pwd|credential|auth|bearer|service[_-]?role)[\w\s.\-]{0,40}[:=]\s*["']([A-Za-z0-9_\-/.+=]{32,})["']'''
+secretGroup = 1
+entropy = 3.5
+tags = ["key", "entropy", "generic"]
+
+[[rules]]
+id = "generic-high-entropy-env-secret"
+description = "Generic high-entropy credential-like env assignment"
+regex = '''(?im)^\s*[A-Z0-9_]*(?:SECRET|TOKEN|API[_-]?KEY|PRIVATE[_-]?KEY|PASSWORD|PASSWD|PWD|CREDENTIAL|AUTH|BEARER|SERVICE[_-]?ROLE)[A-Z0-9_]*\s*=\s*([A-Za-z0-9_\-/.+=]{32,})\s*$'''
+secretGroup = 1
+entropy = 3.5
+tags = ["key", "entropy", "generic"]

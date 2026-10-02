@@ -1,0 +1,44 @@
+[
+  {
+    "num": 1,
+    "label": "B-Roll Generator (text-to-video)",
+    "model": "bytedance/seedance-2.0/text-to-video",
+    "elapsed": 183.5,
+    "videoUrl": "https://ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com/dreamina-seedance-2-0/02177627064862600000000000000000000ffffc0a87c1e63528f.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260415%2Fap-southeast-1%2Ftos%2Frequest&X-Tos-Date=20260415T163338Z&X-Tos-Expires=86400&X-Tos-Signature=3e4808a8b10c0fb41afd409629dd14140e9a030e63ae01efdb7146b60d0a5999&X-Tos-SignedHeaders=host"
+  },
+  {
+    "num": 2,
+    "label": "Ad Creative Generator (text-to-video)",
+    "model": "bytedance/seedance-2.0/text-to-video",
+    "elapsed": 161.7,
+    "videoUrl": "https://ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com/dreamina-seedance-2-0/02177627083232400000000000000000000ffffc0a85601ca6f92.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260415%2Fap-southeast-1%2Ftos%2Frequest&X-Tos-Date=20260415T163622Z&X-Tos-Expires=86400&X-Tos-Signature=98805acda231a96ec9decc73227d3131019e6c4004e97a00318cda4ad7adbd24&X-Tos-SignedHeaders=host"
+  },
+  {
+    "num": 3,
+    "label": "Product Video Creator (no face)",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "elapsed": 86.5,
+    "videoUrl": "https://ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com/dreamina-seedance-2-0/02177627099474200000000000000000000ffffc0a87c1e68424a.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260415%2Fap-southeast-1%2Ftos%2Frequest&X-Tos-Date=20260415T163749Z&X-Tos-Expires=86400&X-Tos-Signature=3bedaecac327fff6dc61213f4e87fb193355694ecd7789742118da11a01a8d98&X-Tos-SignedHeaders=host"
+  },
+  {
+    "num": 4,
+    "label": "Scene Director (no face)",
+    "model": "bytedance/seedance-2.0/reference-to-video",
+    "elapsed": 91.7,
+    "videoUrl": "https://ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com/dreamina-seedance-2-0/02177627108106500000000000000000000ffffc0a87ff39117ae.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260415%2Fap-southeast-1%2Ftos%2Frequest&X-Tos-Date=20260415T163925Z&X-Tos-Expires=86400&X-Tos-Signature=cf972577e636c1c813cb34248a41da94685624cc7edc35a9fe979a6e3a67b346&X-Tos-SignedHeaders=host"
+  },
+  {
+    "num": 5,
+    "label": "Scene Director (WITH face — filter test)",
+    "model": "bytedance/seedance-2.0/reference-to-video",
+    "elapsed": 119,
+    "videoUrl": "https://ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com/dreamina-seedance-2-0/02177627117303200000000000000000000ffffc0a8aea0ebc3b9.mp4?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260415%2Fap-southeast-1%2Ftos%2Frequest&X-Tos-Date=20260415T164125Z&X-Tos-Expires=86400&X-Tos-Signature=d4d6ed893a3c84acb2f3d675ee08294aebd68ba2d18e78a6a6b6bb8195ab894e&X-Tos-SignedHeaders=host"
+  },
+  {
+    "num": 6,
+    "label": "Product Video Creator (WITH face — filter test)",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "elapsed": 5.2,
+    "error": "unexpected http status code: 400, body: {\"code\":400,\"message\":\"The request failed because the input image may contain real person. Request id: 021776271292399938a0312c1a8c2e332f47e263cd7c43e9dbccd\",\"data\":{\"id\":\"\",\"model\":\"bytedance/seedance-2.0/image-to-video\",\"outputs\":null,\"urls\":{\"get\":\"\"},\"has_nsfw_contents\":null,\"status\":\"failed\",\"created_at\":\"0001-01-01T00:00:00Z\",\"error\":\"The request failed because the input image may contain real person. Request id: 021776271292399938a0312c1a8c2e332f47e263cd7c43e9dbccd\",\"executionTime\":0,\"timings\":{\"inference\":0}}}"
+  }
+]

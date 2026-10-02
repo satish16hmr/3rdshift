@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "T1 Personal Story",
+      "taskId": "d7458093-9be9-46ea-a3bb-6ed90c0b89d8",
+      "status": "PASS",
+      "charCount": 1240,
+      "hookWords": 10,
+      "failures": [],
+      "preview": "I almost killed 3rdShift before a single person paid us.  Three months in, I was deep in the build.  Integrations, autom"
+    },
+    {
+      "name": "T2 Contrarian Take",
+      "taskId": "97b65d07-0c7d-4a82-83e4-ff9beafc5747",
+      "status": "PASS",
+      "charCount": 1372,
+      "hookWords": 6,
+      "failures": [],
+      "preview": "Most founders track the wrong number.  CAC gets a dedicated Slack channel. Time-to-value gets a shrug.  That's backwards"
+    },
+    {
+      "name": "T3 Framework",
+      "taskId": "057b5ff4-ece8-4412-98f1-1ff81f365c71",
+      "status": "PASS",
+      "charCount": 1487,
+      "hookWords": 9,
+      "failures": [],
+      "preview": "5 questions that separate great operators from expensive mistakes.  Most founders ask about experience. Experience tells"
+    },
+    {
+      "name": "T4 Case Study",
+      "taskId": "831f6c30-95ba-4121-8a08-7f8dcc894095",
+      "status": "PASS",
+      "charCount": 1428,
+      "hookWords": 10,
+      "failures": [],
+      "preview": "0 to 12 paying customers in 45 days. No ads.  We launched 3rdShift with 85 AI workers ready to deploy.  No waitlist. No "
+    },
+    {
+      "name": "T5 Industry Insight",
+      "taskId": "799f6377-3587-491a-8895-d4ecef4430b1",
+      "status": "PASS",
+      "charCount": 1428,
+      "hookWords": 10,
+      "failures": [],
+      "preview": "80% of your SaaS integrations are about to be worthless.  Not an exaggeration. A timeline problem.  Here's what I'm watc"
+    },
+    {
+      "name": "T6 Question Post",
+      "taskId": "0fde898f-162b-416a-8e4c-0767088013d9",
+      "status": "PASS",
+      "charCount": 961,
+      "hookWords": 11,
+      "failures": [],
+      "preview": "What would you keep if you could only have 5 tools?  Not a hypothetical. We actually did this.  We were bootstrapping ha"
+    },
+    {
+      "name": "T7 Announcement",
+      "taskId": "33090794-13d2-4854-b8fb-a303e9c3bd0f",
+      "status": "PASS",
+      "charCount": 1125,
+      "hookWords": 11,
+      "failures": [],
+      "preview": "We stopped looking for a Head of Design two months ago.  Not because we gave up — because Shobrun was already doing the "
+    },
+    {
+      "name": "T8 Carousel Outline",
+      "taskId": "63738f87-4583-46ef-aad5-4cf2692a393d",
+      "status": "PASS",
+      "charCount": 4192,
+      "hookWords": 1,
+      "failures": [],
+      "preview": "# Carousel Outline: How to Validate a SaaS Idea in 30 Days  ---  ## Slide 1 — Hook **Headline:** 30 days. 3 ideas. 1 fra"
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

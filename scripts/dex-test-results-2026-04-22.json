@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "Test 1 — Shopify / DTC",
+      "status": "PASS",
+      "taskId": "0f047950-4cdb-4028-848e-27fb5469daa7",
+      "wordCount": 288,
+      "charCount": 1587,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "# The Only Shirt You Actually Need to Pack  You've been burned before. The synthetic tee that smelled like yesterday's flight by noon. The Patagonia option that looked great on a trail and exactly lik"
+    },
+    {
+      "name": "Test 2 — Amazon TFSD",
+      "status": "PASS",
+      "taskId": "4c0158ae-83ff-4ca5-b807-a946374c9fe8",
+      "wordCount": 277,
+      "charCount": 1638,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "**TITLE** HydroVault 32oz Stainless Steel Water Bottle – Ice Cold All Day, Triple-Wall Vacuum Insulation, Leak-Proof, Fits Cup Holders  ---  **BULLETS**  • STAYS COLD 24+ HOURS: Triple-wall vacuum ins"
+    },
+    {
+      "name": "Test 3 — Etsy",
+      "status": "FAIL",
+      "taskId": "048f293a-0170-4288-901f-1db87cc093b3",
+      "wordCount": 259,
+      "charCount": 1396,
+      "outputStatus": "complete",
+      "failures": [
+        "Too long: 259 words (max 250)"
+      ],
+      "preview": "**For the friend who deserves a mug that wasn't made by a machine.**  You know the feeling — you open a gift and you can see the thought in it. Not the price tag, not the brand. The actual thought. Th"
+    },
+    {
+      "name": "Test 4 — TikTok Shop",
+      "status": "PASS",
+      "taskId": "bdf096ad-8de6-4749-9ff0-2b774f788047",
+      "wordCount": 74,
+      "charCount": 412,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "Your bedroom lighting has been killing your content long enough. 📱✨  This 10\" ring light gives you studio-level glow anywhere — warm, cool, or daylight, 10 brightness levels, flexible phone mount inc"
+    },
+    {
+      "name": "Test 5 — Walmart",
+      "status": "PASS",
+      "taskId": "c8adf6f3-9140-4d70-ac49-86c4bc80bb84",
+      "wordCount": 196,
+      "charCount": 1131,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "**Cordless Handheld Vacuum Cleaner – 22V, 25-Min Runtime, 2-Speed Suction with Crevice Tool & Brush Attachment**  ---  **Cereal on the couch. Dog hair on the car seat. Crumbs under the high chair.** T"
+    },
+    {
+      "name": "Test 6 — Wholesale / B2B catalog",
+      "status": "PASS",
+      "taskId": "3c8c5513-ebb0-4c10-9c23-c89e07201dea",
+      "wordCount": 254,
+      "charCount": 1840,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "# Commercial Stainless Steel Mixing Bowl Set — 5-Piece | SKU: MXB-SS510-NSF  ---  **NSF Certified | 18/10 Stainless Steel | 5-Piece Set** **Wholesale: $14.99/unit | MOQ: 12-piece case**  ---  ## Techn"
+    },
+    {
+      "name": "Test 7 — DTC long-form website",
+      "status": "PASS",
+      "taskId": "2023a7ca-a063-4920-9500-461f102a2595",
+      "wordCount": 508,
+      "charCount": 2901,
+      "outputStatus": "complete",
+      "failures": [],
+      "preview": "# The Last Jacket You'll Argue With at Trailhead  There's a specific kind of frustration that builds at mile 12 when rain starts coming sideways and you already know your jacket isn't going to hold. Y"
+    }
+  ],
+  "passed": 6,
+  "total": 7
+}

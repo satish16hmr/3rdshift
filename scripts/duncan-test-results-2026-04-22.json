@@ -1,0 +1,61 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "Test 1 — Investor Pitch",
+      "taskId": "0d814548-c09e-4778-8810-b72d7160f1dd",
+      "status": "PASS",
+      "wordCount": 1774,
+      "failures": [],
+      "preview": "# Market Opportunity: AI Workforce SaaS for Solo Founders  ## Executive Summary  The U.S. market for AI-powered workforc"
+    },
+    {
+      "name": "Test 2 — Market Entry Strategy",
+      "taskId": "710a1921-18ad-402c-9522-b93a14883398",
+      "status": "PASS",
+      "wordCount": 1744,
+      "failures": [],
+      "preview": "# Market Entry Analysis: D2C Men's Skincare, Ages 35–55 (United States)  ---  ## Bottom Line Up Front  **Enter — with co"
+    },
+    {
+      "name": "Test 3 — Product Validation",
+      "taskId": "c867936b-cd42-4e07-ad31-0b9f3ec49bcf",
+      "status": "PASS",
+      "wordCount": 1708,
+      "failures": [],
+      "preview": "# Product Validation: Linear-Meets-Notion for Async-First Engineering Teams  ---  ## Does This Market Exist?  **Verdict:"
+    },
+    {
+      "name": "Test 4 — Competitive Intelligence",
+      "taskId": "7592494b-3cc3-4c05-88f0-413ba31c73e1",
+      "status": "FAIL",
+      "wordCount": 1778,
+      "failures": [
+        "Missing: \"attack\""
+      ],
+      "preview": "# Competitive Intelligence: Jasper, Copy.ai, Writesonic  ## Jasper Deep Dive  **Overview** Jasper is the category incumb"
+    },
+    {
+      "name": "Test 5 — Industry Trend Analysis",
+      "taskId": "000dfd68-5dbc-482f-8c39-6b39789cf7b3",
+      "status": "FAIL",
+      "wordCount": 2128,
+      "failures": [
+        "Missing: \"trend\""
+      ],
+      "preview": "# AI Voice Agents for Customer Service: Trend Analysis  ## Executive Summary  Three forces are converging to make 2026 a"
+    },
+    {
+      "name": "Test 6 — M&A Screening",
+      "taskId": "0a3c1203-c268-4fc2-922a-2b9399f6de09",
+      "status": "FAIL",
+      "wordCount": 1653,
+      "failures": [
+        "Missing: \"shortlist\""
+      ],
+      "preview": "# Acquisition Target Screening: Newsletter Tools & Creator Economy Infrastructure  ## Strategic Rationale  A media compa"
+    }
+  ],
+  "passed": 3,
+  "total": 6
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "Team Standup",
+      "taskId": "ea49feaf-d624-42e7-82b0-22ed549a9aa3",
+      "status": "PASS",
+      "wordCount": 230,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Standup Notes — 3rdShift Team  **Date:** Today | **Attendees:** JR (CEO), Roger (Lead Developer), Shobrun (Product Designer)  ---  ## Updates  | Nam"
+    },
+    {
+      "name": "1:1 Meeting",
+      "taskId": "febaf690-4eb9-4cc6-b1cf-967e2091d291",
+      "status": "PASS",
+      "wordCount": 348,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# 1:1 Notes — JR & Roger  **Date:** Not specified **Attendees:** JR (CEO), Roger (Lead Developer) *Note: Shobrun was listed as an attendee but does no"
+    },
+    {
+      "name": "Client Call",
+      "taskId": "adde740a-2005-4174-9ab7-9c5161bc24a5",
+      "status": "PASS",
+      "wordCount": 405,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Client Call Notes — BuildFlow  **Date:** Not specified **Attendees (3rdShift):** JR (CEO), Roger (Lead Developer), Shobrun (Product Designer) **Atte"
+    },
+    {
+      "name": "Strategy Session",
+      "taskId": "4ec9a921-b49b-4431-ad3b-4aeac12c8b76",
+      "status": "PASS",
+      "wordCount": 499,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Strategy Session Notes — 3rdShift Launch Timing  **Date:** Not specified **Attendees:** JR (CEO), Roger (Lead Developer), Shobrun (Product Designer)"
+    },
+    {
+      "name": "Customer Discovery",
+      "taskId": "d758979c-0913-4f31-894e-af4eacd49654",
+      "status": "PASS",
+      "wordCount": 630,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Customer Discovery Interview — PM, 50-Person SaaS Company  ---  ## About the Interviewee  - **Name:** Sarah - **Role:** Project Manager - **Company "
+    },
+    {
+      "name": "Sales Call",
+      "taskId": "d4e8fc87-bf43-4de8-958a-b4de4bddd452",
+      "status": "PASS",
+      "wordCount": 626,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Sales Call Notes — BuildFlow  ---  ## Prospect Context  - **Company:** BuildFlow - **Attendees:** Wilma (SDR), Marcus (VP of Operations) - **Our tea"
+    },
+    {
+      "name": "Board Meeting",
+      "taskId": "e7bac44d-964c-4fb9-bf97-bcaf527133e9",
+      "status": "PASS",
+      "wordCount": 521,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Board / Stakeholder Meeting Notes **April Board Meeting** *Adjourned: 3:47 PM*  ---  > **Attribution note:** Attendees list provided (JR, Roger, Sho"
+    },
+    {
+      "name": "General Meeting",
+      "taskId": "7e609108-7fb5-4284-b043-67fac4e00e6a",
+      "status": "PASS",
+      "wordCount": 417,
+      "hasDaci": true,
+      "hasActions": true,
+      "bannedFound": [],
+      "preview": "# Meeting Notes — Inngest Charlie Rollout & Dev Ops  **Date:** [Insert date] **Attendees:** JR (CEO), Roger (Lead Developer), Shobrun (Product Designe"
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

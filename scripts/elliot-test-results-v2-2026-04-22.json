@@ -1,0 +1,95 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "T1-personal-story",
+      "taskId": "57dab17f-e694-4d1d-a739-5a63040df210",
+      "status": "PASS",
+      "charCount": 1316,
+      "hookWords": 9,
+      "hookLine": "I almost killed 3rdShift before we had one customer.",
+      "failures": [],
+      "screenshotPath": "T1-personal-story.png",
+      "preview": "I almost killed 3rdShift before we had one customer.  Month one, I was building. Month two, I was still building. Month three — more building.  Integr"
+    },
+    {
+      "name": "T2-contrarian-take",
+      "taskId": "1781bf6d-3836-4d80-ac43-b9e688786025",
+      "status": "PASS",
+      "charCount": 1234,
+      "hookWords": 7,
+      "hookLine": "Most founders are optimizing the wrong metric.",
+      "failures": [],
+      "screenshotPath": "T2-contrarian-take.png",
+      "preview": "Most founders are optimizing the wrong metric.  CAC gets all the attention. Dashboards built around it. Investor decks leaning on it. Weekly standups "
+    },
+    {
+      "name": "T3-framework",
+      "taskId": "7220cebc-105d-47fd-ba40-875533438976",
+      "status": "PASS",
+      "charCount": 1271,
+      "hookWords": 8,
+      "hookLine": "5 questions I ask before every operator hire:",
+      "failures": [],
+      "screenshotPath": "T3-framework.png",
+      "preview": "5 questions I ask before every operator hire:  Most interviews test experience.  These test judgment.  After 3 bad hires and 2 great ones, I learned t"
+    },
+    {
+      "name": "T4-case-study",
+      "taskId": "3badb7b6-2ab6-454a-b7e6-934d70d91617",
+      "status": "PASS",
+      "charCount": 1486,
+      "hookWords": 10,
+      "hookLine": "We got 12 paying customers in 45 days. No ads.",
+      "failures": [],
+      "screenshotPath": "T4-case-study.png",
+      "preview": "We got 12 paying customers in 45 days. No ads.  Day 1: product live. No launch post. No press. No waitlist.  Just me, LinkedIn, and 85 AI workers nobo"
+    },
+    {
+      "name": "T5-industry-insight",
+      "taskId": "d040535f-71c1-42bc-a354-329308337d37",
+      "status": "PASS",
+      "charCount": 1260,
+      "hookWords": 7,
+      "hookLine": "What if your SaaS integrations become worthless?",
+      "failures": [],
+      "screenshotPath": "T5-industry-insight.png",
+      "preview": "What if your SaaS integrations become worthless?  Not a hypothetical. A timeline.  Here's what's shifting:  Most integrations exist for one reason — s"
+    },
+    {
+      "name": "T6-question-post",
+      "taskId": "5bf7205c-9323-43f1-8fa1-d8fd4dbed77d",
+      "status": "PASS",
+      "charCount": 914,
+      "hookWords": 4,
+      "hookLine": "5 tools. Which stays?",
+      "failures": [],
+      "screenshotPath": "T6-question-post.png",
+      "preview": "5 tools. Which stays?  Not a hypothetical. I actually did this.  Bootstrapping meant cutting everything that wasn't keeping the business alive. I thou"
+    },
+    {
+      "name": "T7-announcement",
+      "taskId": "12e633f9-d6d6-4ac9-84ab-2c3241cc068c",
+      "status": "PASS",
+      "charCount": 951,
+      "hookWords": 8,
+      "hookLine": "Shobrun didn't join 3rdShift. He already was 3rdShift.",
+      "failures": [],
+      "screenshotPath": "T7-announcement.png",
+      "preview": "Shobrun didn't join 3rdShift. He already was 3rdShift.  Four months before his official start date, we were building together.  He redesigned the full"
+    },
+    {
+      "name": "T8-carousel-outline",
+      "taskId": "0bc76a44-3bf9-4470-9b1d-56b88cc99fcd",
+      "status": "PASS",
+      "charCount": 4954,
+      "hookWords": 8,
+      "hookLine": "**Headline:** Your SaaS idea isn't worth building yet.",
+      "failures": [],
+      "screenshotPath": "T8-carousel-outline.png",
+      "preview": "# Carousel Outline: How to Validate a SaaS idea in 30 Days  ---  ## Slide 1 — Hook **Headline:** Your SaaS idea isn't worth building yet. **Subhead:**"
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

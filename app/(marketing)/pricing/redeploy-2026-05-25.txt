@@ -1,0 +1,2 @@
+Force Vercel redeploy for pricing page after Tailwind utility fix.
+Timestamp: 2026-05-25T00:00:00-05:00

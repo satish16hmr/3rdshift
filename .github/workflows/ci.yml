@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  typecheck:
+    name: TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      # Only lint product code (app/ lib/ components/) — scripts/ and *.cjs are excluded
+      # Errors block merge; warnings are allowed (pre-existing patterns downgraded in eslint.config.mjs)
+      # --max-warnings 9999: effectively errors-only blocking since all current issues are warnings
+      - run: npx eslint app/ lib/ components/ --ext .ts,.tsx,.js,.jsx --max-warnings 9999

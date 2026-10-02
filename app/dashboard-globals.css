@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
+
+/* Force light mode — tie dark: utilities to .dark class only, never system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Force light color-scheme regardless of system preference */
+:root { color-scheme: light; }
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: light; }
+}
+
+*, *::before, *::after { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }

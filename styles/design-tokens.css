@@ -1,0 +1,226 @@
+/*
+ * 3rdShift Website design tokens
+ * Source: Figma file e65a0PWJg3F4DuNroUZBTC, Website canvas node 1023:36350.
+ * Extracted from actual node usage because this file does not expose named
+ * Figma styles, and the provided token cannot read Figma variables.
+ */
+
+:root {
+  /* Font families */
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-accent: "Poppins", var(--font-sans);
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Typography scale */
+  --text-display-2xl-size: 60px;
+  --text-display-2xl-line-height: 72px;
+  --text-display-2xl-letter-spacing: -1.2px;
+
+  --text-display-xl-size: 48px;
+  --text-display-xl-line-height: 60px;
+  --text-display-xl-letter-spacing: -0.96px;
+
+  --text-display-lg-size: 36px;
+  --text-display-lg-line-height: 44px;
+  --text-display-lg-letter-spacing: -0.72px;
+
+  --text-display-md-size: 30px;
+  --text-display-md-line-height: 38px;
+  --text-display-md-letter-spacing: 0px;
+
+  --text-display-sm-size: 24px;
+  --text-display-sm-line-height: 32px;
+  --text-display-sm-letter-spacing: 0px;
+
+  --text-xl-size: 20px;
+  --text-xl-line-height: 30px;
+  --text-xl-letter-spacing: 0px;
+
+  --text-lg-size: 18px;
+  --text-lg-line-height: 28px;
+  --text-lg-letter-spacing: 0px;
+
+  --text-md-size: 16px;
+  --text-md-line-height: 24px;
+  --text-md-letter-spacing: 0px;
+
+  --text-sm-size: 14px;
+  --text-sm-line-height: 20px;
+  --text-sm-letter-spacing: 0px;
+
+  --text-xs-size: 12px;
+  --text-xs-line-height: 18px;
+  --text-xs-letter-spacing: 0px;
+
+  --text-2xs-size: 11px;
+  --text-2xs-line-height: 16.5px;
+  --text-2xs-letter-spacing: 0px;
+
+  /* Brand and semantic colors */
+  --color-brand-blue: #2563eb;
+  --color-brand-blue-hover: #175cd3;
+  --color-brand-blue-deep: #0941b8;
+  --color-brand-blue-soft: #f0f5ff;
+  --color-brand-blue-tint: #f5f8ff;
+  --color-brand-blue-badge: #eff8ff;
+  --color-brand-blue-border: #b2ddff;
+  --color-brand-blue-outline: #6290f2;
+
+  --color-background: #ffffff;
+  --color-background-muted: #fafafa;
+  --color-background-subtle: #f7f7f7;
+  --color-background-raised: #fdfdfd;
+  --color-background-dark: #121212;
+  --color-hero-navy: #040056;
+  --color-hero-navy-soft: rgb(2 2 55 / 20%);
+  --color-hero-blue-orb: rgb(0 80 255 / 46%);
+  --color-hero-purple-orb: rgb(191 0 255 / 53%);
+
+  --color-text-primary: #09090b;
+  --color-text-strong: #181d27;
+  --color-text-body: #414651;
+  --color-text-muted: #535862;
+  --color-text-secondary: #71717a;
+  --color-text-tertiary: #717680;
+  --color-text-placeholder: #a4a7ae;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #e9eaeb;
+  --color-border-strong: #d5d7da;
+  --color-border-subtle: #f1f1f1;
+  --color-border-neutral: #e4e7ec;
+  --color-border-contrast: rgb(0 0 0 / 8%);
+
+  --color-success: #6bc155;
+  --color-warning: #f7bd4b;
+  --color-error: #d92d20;
+  --color-error-bright: #f04438;
+  --color-accent-purple: #6941c6;
+
+  /* Frequently used raw palette values from Website nodes */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-black-05: rgb(0 0 0 / 5%);
+  --color-black-08: rgb(0 0 0 / 8%);
+  --color-black-10: rgb(0 0 0 / 10%);
+  --color-black-20: rgb(10 10 10 / 20%);
+  --color-black-25: rgb(0 0 0 / 25%);
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f5f5f5;
+  --color-zinc-200: #e9eaeb;
+  --color-zinc-300: #d5d7da;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #525252;
+  --color-zinc-700: #414651;
+  --color-zinc-800: #181d27;
+  --color-zinc-950: #09090b;
+  --color-neutral-500: #535862;
+  --color-blue-500: #2563EB;
+  --color-red-500: #d92d20;
+  --color-red-600: #f04438;
+
+  /* Spacing scale: common auto-layout gaps and padding values */
+  --space-0: 0px;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-4-5: 18px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+  --space-15: 60px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28-5: 114px;
+  --space-30: 120px;
+
+  /* Section and container spacing */
+  --section-padding-y-mobile: 60px;
+  --section-padding-y-desktop: 96px;
+  --hero-padding-y-desktop: 120px;
+  --container-padding-mobile: 24px;
+  --container-padding-tablet: 40px;
+  --container-padding-desktop: 120px;
+  --container-max-width: 1200px;
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 16px;
+  --radius-4xl: 24px;
+  --radius-5xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Effects */
+  --shadow-xs: 0 1px 2px 0 rgb(16 24 40 / 5%);
+  --shadow-sm: 0 1px 2px 0 rgb(16 24 40 / 5%), inset 0 -2px 0 0 rgb(10 13 18 / 5%), inset 0 0 0 1px rgb(10 13 18 / 18%);
+  --shadow-md: 0 4px 4px 0 rgb(0 0 0 / 25%);
+  --shadow-glass: 0 1px 2px 0 rgb(16 24 40 / 5%), inset 0 1px 0 0 rgb(255 255 255 / 40%);
+  --blur-glass: 12px;
+  --blur-soft: 37.4px;
+  --blur-orb-sm: 88.3px;
+  --blur-orb-md: 113.6px;
+  --blur-orb-lg: 400px;
+  --effect-glass-background: rgb(233 234 235 / 32%);
+  --effect-glass-background-strong: rgb(233 234 235 / 70%);
+  --effect-glass-border: rgb(255 255 255 / 40%);
+  --effect-glass-border-subtle: rgb(0 0 0 / 8%);
+
+  /* Layout grids */
+  --grid-desktop-canvas: 1440px;
+  --grid-desktop-columns: 12;
+  --grid-desktop-gutter: 32px;
+  --grid-desktop-margin: 120px;
+  --grid-desktop-content: 1200px;
+  --grid-tablet-canvas: 768px;
+  --grid-tablet-columns: 8;
+  --grid-tablet-gutter: 24px;
+  --grid-tablet-margin: 40px;
+  --grid-mobile-canvas: 390px;
+  --grid-mobile-columns: 4;
+  --grid-mobile-gutter: 16px;
+  --grid-mobile-margin: 24px;
+  --grid-mobile-content: 342px;
+}
+
+.text-display-2xl {
+  font: var(--font-weight-medium) var(--text-display-2xl-size) / var(--text-display-2xl-line-height) var(--font-sans);
+  letter-spacing: var(--text-display-2xl-letter-spacing);
+}
+
+.text-display-xl {
+  font: var(--font-weight-medium) var(--text-display-xl-size) / var(--text-display-xl-line-height) var(--font-sans);
+  letter-spacing: var(--text-display-xl-letter-spacing);
+}
+
+.text-display-lg {
+  font: var(--font-weight-medium) var(--text-display-lg-size) / var(--text-display-lg-line-height) var(--font-sans);
+  letter-spacing: var(--text-display-lg-letter-spacing);
+}
+
+.glass-effect {
+  background: var(--effect-glass-background);
+  border: 1px solid var(--effect-glass-border);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(var(--blur-glass));
+}

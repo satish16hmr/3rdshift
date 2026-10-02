@@ -1,0 +1,70 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "T1-welcome-series",
+      "taskId": "3c7571c4-148d-4a12-a8b9-041104720ea9",
+      "deliverable": "Welcome Series",
+      "status": "PASS",
+      "wordCount": 2013,
+      "failures": [],
+      "screenshotPath": "T1-welcome-series.png"
+    },
+    {
+      "name": "T2-cart-recovery",
+      "taskId": "75b26aef-e1d1-477d-8964-25e1348ccef8",
+      "deliverable": "Abandoned Cart / Checkout Flow",
+      "status": "PASS",
+      "wordCount": 2106,
+      "failures": [],
+      "screenshotPath": "T2-cart-recovery.png"
+    },
+    {
+      "name": "T3-post-purchase",
+      "taskId": "f8781a99-e175-439d-86b6-546b020f6129",
+      "deliverable": "Post-Purchase Sequence",
+      "status": "PASS",
+      "wordCount": 2001,
+      "failures": [],
+      "screenshotPath": "T3-post-purchase.png"
+    },
+    {
+      "name": "T4-lead-nurture",
+      "taskId": "04064eca-1d4d-4502-a78b-d79071e0ee5b",
+      "deliverable": "Lead Nurture / B2B Sequence",
+      "status": "PASS",
+      "wordCount": 2834,
+      "failures": [],
+      "screenshotPath": "T4-lead-nurture.png"
+    },
+    {
+      "name": "T5-reengagement",
+      "taskId": "46105e98-b778-441e-ba78-28bfe7c50f70",
+      "deliverable": "Re-Engagement / Win-Back",
+      "status": "PASS",
+      "wordCount": 2382,
+      "failures": [],
+      "screenshotPath": "T5-reengagement.png"
+    },
+    {
+      "name": "T6-campaign-calendar",
+      "taskId": "dddb5eb4-547e-4650-9864-532b3233f9ff",
+      "deliverable": "Campaign Calendar (1-3 months)",
+      "status": "PASS",
+      "wordCount": 4150,
+      "failures": [],
+      "screenshotPath": "T6-campaign-calendar.png"
+    },
+    {
+      "name": "T7-segmentation",
+      "taskId": "6abac524-3a23-44c6-9898-582962adb846",
+      "deliverable": "Segmentation & Audience Architecture",
+      "status": "PASS",
+      "wordCount": 2252,
+      "failures": [],
+      "screenshotPath": "T7-segmentation.png"
+    }
+  ],
+  "passed": 7,
+  "total": 7
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2026-04-22",
+  "results": [
+    {
+      "name": "T1-b2b-saas-challenger",
+      "taskId": "3ac1a163-60db-415f-b091-f2c1a5ae53af",
+      "status": "PASS",
+      "wordCount": 3335,
+      "failures": [],
+      "screenshotPath": "T1-b2b-saas-challenger.png"
+    },
+    {
+      "name": "T2-dtc-consumer",
+      "taskId": "896c9f59-457b-4450-bdb9-bffcde64cdc9",
+      "status": "PASS",
+      "wordCount": 3750,
+      "failures": [],
+      "screenshotPath": "T2-dtc-consumer.png"
+    },
+    {
+      "name": "T3-consumer-fintech",
+      "taskId": "2fb75723-ddbb-4831-b718-6cbc0d68857f",
+      "status": "PASS",
+      "wordCount": 4038,
+      "failures": [],
+      "screenshotPath": "T3-consumer-fintech.png"
+    },
+    {
+      "name": "T4-b2b-agency",
+      "taskId": "6f1bfd91-dfe9-4dbc-990e-64f7db953dee",
+      "status": "PASS",
+      "wordCount": 3576,
+      "failures": [],
+      "screenshotPath": "T4-b2b-agency.png"
+    },
+    {
+      "name": "T5-mission-driven",
+      "taskId": "12d3a294-1af8-4772-a4c7-529ebd64d6c4",
+      "status": "PASS",
+      "wordCount": 3947,
+      "failures": [],
+      "screenshotPath": "T5-mission-driven.png"
+    },
+    {
+      "name": "T6-3rdshift-own-brand",
+      "taskId": "77e91c48-f1e9-49e2-9e1a-01b8548934d2",
+      "status": "FAIL",
+      "wordCount": 3560,
+      "failures": [
+        "Banned: \"Unlock the power of\"",
+        "Banned: \"Elevate your brand\""
+      ],
+      "screenshotPath": "T6-3rdshift-own-brand.png"
+    },
+    {
+      "name": "T7-comprehensive-depth",
+      "taskId": "f31704f0-d7d7-4268-b94a-605a2e31b337",
+      "status": "PASS",
+      "wordCount": 4414,
+      "failures": [],
+      "screenshotPath": "T7-comprehensive-depth.png"
+    }
+  ],
+  "passed": 6,
+  "total": 7
+}

@@ -1,0 +1,671 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
+@import "../styles/design-tokens.css";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+/* Force light mode — tie dark: utilities to .dark class only, never system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Force light color-scheme regardless of system preference */
+:root {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    background: white;
+    color: #111113;
+  }
+}
+
+/* Collapsed section accordion chevron */
+details[open] .section-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dashboard shell invariants. Keep these outside Tailwind so the app shell
+   keeps a stable desktop sidebar/main layout during auth redirects, OAuth
+   callbacks, or utility-class generation changes. */
+.dashboard-shell {
+  --dashboard-sidebar-padding-left: 8px;
+  --dashboard-sidebar-rail-width: 44px;
+  --dashboard-sidebar-gap: 12px !important;
+  --dashboard-sidebar-panel-open-width: 296px;
+  --dashboard-sidebar-panel-collapsed-width: 80px;
+  --dashboard-sidebar-open-width: calc(var(--dashboard-sidebar-padding-left) + var(--dashboard-sidebar-rail-width) + var(--dashboard-sidebar-gap) + var(--dashboard-sidebar-panel-open-width));
+  --dashboard-sidebar-collapsed-width: calc(var(--dashboard-sidebar-padding-left) + var(--dashboard-sidebar-rail-width) + var(--dashboard-sidebar-panel-collapsed-width));
+  --dashboard-sidebar-current-width: var(--dashboard-sidebar-open-width);
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.dashboard-sidebar-desktop {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 40 !important;
+  width: fit-content !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  transition: width 260ms ease;
+}
+
+.dashboard-mobile-header {
+  display: flex;
+}
+
+.dashboard-main {
+  box-sizing: border-box;
+  min-width: 0;
+  padding-left: 8px !important;
+  width: 100%;
+}
+
+.dashboard-main-surface {
+  min-height: 100%;
+}
+
+.dashboard-loading-sidebar {
+  background: #d1d5db;
+  border-right: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+.dashboard-loading-logo {
+  height: 28px;
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-shell {
+    background: #d1d5db;
+    display: grid;
+    grid-template-columns: var(--dashboard-sidebar-current-width) minmax(0, 1fr);
+    gap: 0 !important;
+    transition: grid-template-columns 260ms ease;
+  }
+
+  .dashboard-shell[data-sidebar-collapsed="true"] {
+    --dashboard-sidebar-current-width: var(--dashboard-sidebar-collapsed-width);
+  }
+
+  .dashboard-sidebar-desktop {
+    display: block !important;
+    position: sticky !important;
+    top: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: 1;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .dashboard-mobile-header {
+    display: none !important;
+  }
+
+  .dashboard-main {
+    grid-column: 2;
+    padding-left: 8px !important;
+  }
+
+  .dashboard-main-surface {
+    max-height: calc(100svh - 35px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .dashboard-shell {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar-desktop {
+    display: none !important;
+  }
+
+  .dashboard-main {
+    padding-left: 8px !important;
+  }
+}
+
+*:hover {
+  scrollbar-color: #cecaca transparent !important;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: transparent transparent !important;
+}
+
+/* Hidden by default */
+*::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border-radius: 10px !important;
+  transition: background 0.2s ease !important;
+}
+
+/* Reset & Container */
+.schedule-picker-calendar .react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+/* Navigation */
+.schedule-picker-calendar .react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.schedule-picker-calendar .react-calendar__navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  border-radius: 9999px;
+  color: #71717a;
+  /* zinc-500 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms;
+}
+
+.schedule-picker-calendar .react-calendar__navigation button:hover:not(:disabled) {
+  background-color: #f4f4f5;
+  /* zinc-100 */
+}
+
+.schedule-picker-calendar .react-calendar__navigation button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.schedule-picker-calendar .react-calendar__navigation__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #18181b;
+  /* zinc-900 */
+}
+
+/* Weekdays */
+.schedule-picker-calendar .react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #71717a;
+  /* zinc-500 */
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.schedule-picker-calendar .react-calendar__month-view__weekdays__weekday {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+
+.schedule-picker-calendar .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/* Days Grid */
+.schedule-picker-calendar .react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.375rem;
+}
+
+.schedule-picker-calendar .react-calendar__tile {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  max-width: 2.25rem !important;
+  max-height: 2.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 0.8125rem !important;
+  color: #414651 !important;
+  /* zinc-800 */
+  cursor: pointer !important;
+  transition: all 150ms !important;
+  padding: 0 !important;
+  margin: 0.125rem auto !important;
+}
+
+.schedule-picker-calendar .react-calendar__tile:hover:not(.react-calendar__tile--active):not(:disabled) {
+  background-color: #e4e4e7 !important;
+  /* zinc-200 */
+  color: #18181b !important;
+}
+
+.schedule-picker-calendar .react-calendar__tile--now {
+  background-color: #f4f4f5 !important;
+  font-weight: 600;
+}
+
+/* All range tiles by default (middle tiles) */
+.schedule-picker-calendar .react-calendar__tile--range {
+  background-color: transparent !important;
+  color: #18181b !important;
+  /* dark text */
+  font-weight: 500 !important;
+  border-radius: 9999px !important;
+}
+
+/* Start tile */
+.schedule-picker-calendar .react-calendar__tile--rangeStart {
+  background-color: #2563eb !important;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 9999px !important;
+}
+
+
+/* End tile */
+.schedule-picker-calendar .react-calendar__tile--rangeEnd {
+  background-color: #2563eb !important;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 9999px !important;
+}
+
+/* If start and end are the same day (or single selection) */
+.schedule-picker-calendar .react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd {
+  border-radius: 9999px !important;
+}
+
+/* Keep the normal active tile (for single date select) rounded */
+.schedule-picker-calendar .react-calendar__tile--active:not(.react-calendar__tile--range) {
+  background-color: #2563eb !important;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 9999px !important;
+}
+
+.schedule-picker-calendar .react-calendar__tile--active:hover {
+  background-color: #1d4ed8 !important;
+  color: white !important;
+  /* blue-700 */
+}
+
+.schedule-picker-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  color: #717680 !important;
+  /* zinc-300 */
+}
+
+.schedule-picker-calendar .react-calendar__month-view__days__day--weekend {
+  color: #414651;
+}
+
+.schedule-picker-calendar .react-calendar__month-view__days__day--neighboringMonth.react-calendar__month-view__days__day--weekend {
+  color: #717680 !important;
+}
+
+.schedule-picker-calendar .react-calendar__tile--range:not(.react-calendar__tile--rangeStart):not(.react-calendar__tile--rangeEnd) {
+  color: white !important;
+  background-color: #2563eb !important;
+}
+
+.schedule-picker-calendar .react-calendar__tile--range.react-calendar__month-view__days__day--neighboringMonth {
+  color: white !important;
+  background-color: #2563eb !important;
+}
+
+@media (max-width: 330px) {
+  .schedule-picker-calendar .react-calendar__month-view__days {
+    gap: 2px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .schedule-picker-calendar .react-calendar__month-view__days {
+    gap: 2px !important;
+  }
+
+  .schedule-picker-calendar .react-calendar__tile {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    min-width: 1.75rem !important;
+    /* Add min-width */
+    min-height: 1.75rem !important;
+    /* Add min-height */
+  }
+}
+
+/* Unified Tiptap Editor and Finish view content styles */
+.tiptap-editor-content {
+  min-height: auto;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3f3f46;
+  font-family: inherit;
+}
+
+.tiptap-editor-content pre,
+.prose pre {
+  background-color: #ffffff !important;
+  border: 1px solid #e4e7ec !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #18181b !important;
+  overflow-x: auto !important;
+  margin: 16px 0 !important;
+  white-space: pre !important;
+}
+
+.tiptap-editor-content pre code,
+.prose pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  white-space: pre !important;
+}
+
+.tiptap-editor-content code:not(pre code),
+.prose code:not(pre code) {
+  background-color: #f4f4f5 !important;
+  color: #18181b !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 13px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+
+.tiptap-editor-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tiptap-editor-content a:hover {
+  color: #175cd3;
+}
+
+.tiptap-editor-content img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 8px;
+  margin: 12px 0;
+  display: block;
+}
+
+.tiptap-editor-content h1,
+.tiptap-editor-content .tiptap-inline-h1,
+.tiptap-inline-h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111113;
+  margin: 24px 0 12px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.tiptap-editor-content h2,
+.tiptap-editor-content .tiptap-inline-h2,
+.tiptap-inline-h2 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #111113;
+  margin: 20px 0 10px;
+  line-height: 1.3;
+}
+
+.tiptap-editor-content h3,
+.tiptap-editor-content .tiptap-inline-h3,
+.tiptap-inline-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111113;
+  margin: 16px 0 8px;
+  line-height: 1.3;
+}
+
+.tiptap-editor-content ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin-bottom: 14px;
+}
+
+.tiptap-editor-content ol {
+  list-style-type: decimal;
+  padding-left: 24px;
+  margin-bottom: 14px;
+}
+
+.tiptap-editor-content li {
+  margin-bottom: 4px;
+}
+
+.tiptap-editor-content strong {
+  font-weight: 700;
+  color: #111113;
+}
+
+.tiptap-editor-content hr {
+  border: none;
+  border-top: 1px solid #e4e4e7;
+  margin: 16px 0;
+}
+
+/* Base table */
+.tiptap-editor-content table {
+  display: block !important;
+  width: 100%;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  font-size: 14px !important;
+  margin: 10px 0 16px !important;
+}
+
+/* Table header */
+.tiptap-editor-content table thead {
+  background: #1d4ed8 !important;
+  color: #fff !important;
+}
+
+.tiptap-editor-content table thead th {
+  background: #1d4ed8 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  padding: 10px 14px !important;
+  text-align: left !important;
+  font-size: 13px !important;
+  letter-spacing: 0.3px !important;
+  white-space: nowrap !important;
+}
+
+/* Table cells */
+.tiptap-editor-content table td {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid #e4e7ec !important;
+  color: #3f3f46 !important;
+  white-space: nowrap !important;
+  transition: background 0.2s ease !important;
+}
+
+/* Zebra rows */
+.tiptap-editor-content table tbody tr:nth-child(even) td {
+  background: #f8fafc !important;
+}
+
+/* Hover effect */
+.tiptap-editor-content table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.tiptap-editor-content table tbody tr:hover td {
+  background: #eff6ff !important;
+}
+
+/* Rounded corners fix */
+.tiptap-editor-content table thead th:first-child {
+  border-top-left-radius: 10px !important;
+}
+
+.tiptap-editor-content table thead th:last-child {
+  border-top-right-radius: 10px !important;
+}
+
+.prose .overflow-x-auto {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  border-radius: 10px !important;
+}
+
+.prose table {
+  width: 100% !important;
+  max-width: none !important;
+  overflow-x: auto !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.prose table thead th:first-child {
+  border-top-left-radius: 0 !important;
+}
+
+.prose table thead th:last-child {
+  border-top-right-radius: 0 !important;
+}
+
+/* Table header */
+.prose table thead {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #fff !important;
+}
+
+.prose table thead th {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #fff !important;
+  padding: 12px 14px !important;
+  text-align: left !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+}
+
+/* Table cells */
+.prose table td {
+  padding: 12px 14px !important;
+  border-bottom: 1px solid #eee !important;
+  transition: background 0.2s ease !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+}
+
+/* Zebra rows */
+.prose table tbody tr:nth-child(even) td {
+  background: #f9fafb !important;
+}
+
+/* Hover effect */
+.prose table tbody tr {
+  transition: all 0.2s ease !important;
+}
+
+.prose table tbody tr:hover td {
+  background: #eff6ff !important;
+}
+
+/* Header hover (optional subtle effect) */
+.prose table thead th:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  cursor: pointer !important;
+}
+
+/* Rounded corners fix */
+.prose table thead th:first-child {
+  border-top-left-radius: 10px !important;
+}
+
+.prose table thead th:last-child {
+  border-top-right-radius: 10px !important;
+}
+
+@media (max-width: 640px) {
+  .auth-signup-page {
+    height: auto !important;
+    min-height: 100svh;
+  }
+
+  .auth-signup-main {
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .auth-signup-left {
+    min-height: calc(100svh - 116px);
+  }
+
+  .auth-footer {
+    position: static !important;
+    z-index: 0;
+  }
+
+  .auth-footer-mobile {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 18px;
+    text-align: center;
+  }
+
+  .auth-footer-mobile-row {
+    display: contents !important;
+  }
+
+  .auth-footer-mobile a,
+  .auth-footer-mobile p {
+    margin: 0;
+    white-space: nowrap;
+  }
+}

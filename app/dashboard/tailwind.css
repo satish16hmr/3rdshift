@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadcn Sidebar CSS Variables — light theme */
+:root {
+  --background: #ffffff;
+  --foreground: #111113;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border-color: rgba(0, 0, 0, 0.07);
+  --ring: #2563eb;
+
+  /* Sidebar tokens */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111113;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #111113;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #2563eb;
+}
